@@ -1,6 +1,12 @@
 /* RESET */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
     font-family: Arial, sans-serif;
     background: #0f0f0f;
     color: white;
@@ -11,7 +17,7 @@ header {
     position: sticky;
     top: 0;
     background: black;
-    padding: 15px;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,7 +43,7 @@ nav a:hover {
 /* HERO SECTION */
 .hero {
     text-align: center;
-    padding: 120px;
+    padding: 120px 20px;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center/cover;
 }
@@ -50,8 +56,9 @@ nav a:hover {
 /* FEATURES */
 .features {
     display: flex;
-    justify-content: space-around;
-    padding: 50px;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
     flex-wrap: wrap;
 }
 
@@ -60,7 +67,8 @@ nav a:hover {
     padding: 25px;
     border-radius: 15px;
     transition: 0.3s;
-    margin: 10px;
+    width: 250px;
+    text-align: center;
 }
 
 .card:hover {
@@ -71,7 +79,7 @@ nav a:hover {
 /* PRICING */
 .pricing {
     text-align: center;
-    padding: 60px;
+    padding: 60px 20px;
 }
 
 .price-card {
@@ -81,10 +89,11 @@ nav a:hover {
     margin: 20px;
     border-radius: 15px;
     transition: 0.3s;
+    width: 250px;
 }
 
 .price-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .premium {
@@ -107,6 +116,7 @@ button {
     display: flex;
     flex-direction: column;
     width: 300px;
+    max-width: 90%;
     margin: 40px auto;
 }
 
@@ -117,7 +127,7 @@ input, textarea {
     border-radius: 5px;
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL ANIMATION (FIXED) */
 .scroll {
     opacity: 0;
     transform: translateY(50px);
@@ -136,7 +146,9 @@ footer {
     background: black;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ============================= */
+/* 📱 MOBILE (0 - 768px) */
+/* ============================= */
 @media (max-width: 768px) {
 
     header {
@@ -149,11 +161,11 @@ footer {
     }
 
     .hero {
-        padding: 60px;
+        padding: 80px 20px;
     }
 
     .hero h2 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .features {
@@ -161,11 +173,61 @@ footer {
         align-items: center;
     }
 
+    .card {
+        width: 90%;
+    }
+
     .price-card {
-        width: 80%;
+        width: 90%;
     }
 
     .pricing {
-        padding: 20px;
+        padding: 30px 10px;
+    }
+
+    /* 🔥 IMPORTANT FIX (your main issue) */
+    .scroll {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ============================= */
+/* 📲 TABLET (769px - 1024px) */
+/* ============================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .price-card {
+        width: 45%;
+    }
+}
+
+/* ============================= */
+/* 💻 LARGE SCREENS (1025px+) */
+/* ============================= */
+@media (min-width: 1025px) {
+
+    .hero h2 {
+        font-size: 50px;
+    }
+
+    .card {
+        width: 250px;
+    }
+
+    .price-card {
+        width: 250px;
     }
 }
