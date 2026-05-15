@@ -1,6 +1,5 @@
-// Join button
 function joinNow() {
-    alert("Welcome to FitZone Gym 💪");
+    alert("Welcome to FitZone Gym ");
 }
 
 // Scroll Animation
@@ -18,8 +17,23 @@ window.addEventListener("scroll", function () {
         }
     });
 });
+const elements = document.querySelectorAll(".scroll");
 
-// ✅ EmailJS Integration (ALAG SE, niche)
+function showOnScroll() {
+    const triggerBottom = window.innerHeight * 0.8;
+
+    elements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+
+        if (boxTop < triggerBottom) {
+            el.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", showOnScroll);
+window.addEventListener("load", showOnScroll);
+
 
 // Initialize EmailJS
 (function(){
@@ -36,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             emailjs.sendForm("service_e0n1r5l", "template_2f893hk", this)
             .then(function() {
-                alert("Message Sent Successfully ✅");
+                alert("Message Sent Successfully ");
             }, function(error) {
-                alert("Failed ❌");
+                alert("Failed ");
             });
         });
     }
